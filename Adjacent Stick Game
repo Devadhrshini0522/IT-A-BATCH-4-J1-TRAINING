@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[] sticks = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            sticks[i] = sc.nextInt();
+        }
+
+        int target = sc.nextInt();
+
+        boolean found = false;
+
+        for (int i = 0; i < n - 1; i++) {
+            if (sticks[i] + sticks[i + 1] == target) {
+                System.out.println(sticks[i] + " " + sticks[i + 1]);
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("No adjacent pair found");
+        }
+    }
+}
