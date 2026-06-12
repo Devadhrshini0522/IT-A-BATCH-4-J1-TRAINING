@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class FrequencyElement {
+    public static void main(String[] args) {
+
+        int[] a = {6, 7, 3, 3, 2, 1, 6, 7, 7, 6};
+        int n = 10;
+
+        System.out.println("Frequency of elements:");
+
+        for (int i = 0; i < n; i++) {
+
+            int count = 1;
+
+            // Skip already counted elements
+            if (a[i] == -1)
+                continue;
+
+            for (int j = i + 1; j < n; j++) {
+
+                if (a[i] == a[j]) {
+                    count++;
+                    a[j] = -1; // Mark counted element
+                }
+            }
+
+            System.out.println(a[i] + " -> " + count);
+        }
+    }
+}
