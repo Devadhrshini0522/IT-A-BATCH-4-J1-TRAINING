@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        float n = sc.nextFloat();
+
+        // Integer part
+        System.out.println((int)n);
+
+        // Highest round off value
+        System.out.println(Math.ceil(n));
+
+        // Lowest round off value
+        System.out.println(Math.floor(n));
+    }
+}
