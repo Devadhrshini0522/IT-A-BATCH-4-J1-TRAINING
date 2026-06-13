@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        if (n < 0 || n > 9) {
+            System.out.println("Invalid Input");
+        } else {
+            int sq = n * n;
+
+            if (sq % 10 == n) {
+                System.out.println("Automorphic Number");
+            } else {
+                System.out.println("Not an Automorphic Number");
+            }
+        }
+    }
+}
