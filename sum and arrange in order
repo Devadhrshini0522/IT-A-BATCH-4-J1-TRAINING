@@ -1,0 +1,34 @@
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+
+        int[] a = {4, 2, 7};
+        int[] b = {3, 1, 5};
+
+        // merge both arrays
+        int[] c = new int[a.length + b.length];
+
+        int k = 0;
+
+        for (int i = 0; i < a.length; i++) {
+            c[k] = a[i];
+            k++;
+        }
+
+        for (int i = 0; i < b.length; i++) {
+            c[k] = b[i];
+            k++;
+        }
+
+        // sort in ascending order
+        Arrays.sort(c);
+
+        // print array
+        System.out.println("Sorted Array:");
+
+        for (int i = 0; i < c.length; i++) {
+            System.out.print(c[i] + " ");
+        }
+    }
+}
