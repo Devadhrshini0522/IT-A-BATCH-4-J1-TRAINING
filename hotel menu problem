@@ -1,0 +1,49 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String[] food = {"dosa", "idli", "pongal", "poori", "juice"};
+        int[] price = {50, 30, 60, 40, 70};
+
+        int total = 0;
+        String choice;
+
+        System.out.println("----- HOTEL MENU -----");
+        System.out.println("Dosa   - Rs.50");
+        System.out.println("Idli   - Rs.30");
+        System.out.println("Pongal - Rs.60");
+        System.out.println("Poori  - Rs.40");
+        System.out.println("Juice  - Rs.70");
+
+        while (true) {
+            System.out.print("\nEnter food name: ");
+            String item = sc.nextLine().toLowerCase();
+
+            boolean found = false;
+
+            for (int i = 0; i < food.length; i++) {
+                if (item.equals(food[i])) {
+                    System.out.println(item + " Price = Rs." + price[i]);
+                    total += price[i];
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                System.out.println("No item found");
+            }
+
+            System.out.print("Do you want another item (yes/no): ");
+            choice = sc.nextLine();
+
+            if (choice.equalsIgnoreCase("no")) {
+                break;
+            }
+        }
+
+        System.out.println("\nTotal Amount = Rs." + total);
+    }
+}
